@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Layout/Header";
 import { useSelector } from "react-redux";
@@ -21,7 +22,7 @@ const UserInbox = () => {
   const [newMessage, setNewMessage] = useState("");
   const [userData, setUserData] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
-  const [images, setImages] = useState();
+  const [ setImages] = useState();
   const [activeStatus, setActiveStatus] = useState(false);
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
@@ -285,7 +286,7 @@ const MessageList = ({
       }
     };
     getUser();
-  }, [me, data]);
+  }, [me, data, setActiveStatus, online]);
 
   return (
     <div
@@ -377,6 +378,7 @@ const SellerInbox = ({
                 />
               )}
               {item.images && (
+                // eslint-disable-next-line jsx-a11y/alt-text
                 <img
                   src={`${item.images?.url}`}
                   className="w-[300px] h-[300px] object-cover rounded-[10px] ml-2 mb-2"

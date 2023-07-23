@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
+/* eslint-disable eqeqeq */
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import { server } from "../../server";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import styles from "../../styles/styles";
@@ -22,7 +24,7 @@ const DashboardMessages = () => {
   const [newMessage, setNewMessage] = useState("");
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [activeStatus, setActiveStatus] = useState(false);
-  const [images, setImages] = useState();
+  const [, setImages] = useState();
   const [open, setOpen] = useState(false);
   const scrollRef = useRef(null);
 
@@ -376,6 +378,7 @@ const SellerInbox = ({
                   />
                 )}
                 {item.images && (
+                  // eslint-disable-next-line jsx-a11y/alt-text
                   <img
                     src={`${item.images?.url}`}
                     className="w-[300px] h-[300px] object-cover rounded-[10px] mr-2"
