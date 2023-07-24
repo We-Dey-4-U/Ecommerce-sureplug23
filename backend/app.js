@@ -24,7 +24,7 @@ app.use("/test", (req, res) => {
   res.send("Hello world!");
 });
 
-app.use(bodyParser.urlencoded({ extended: true, limit: "100kb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
