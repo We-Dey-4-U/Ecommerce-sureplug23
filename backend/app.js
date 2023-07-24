@@ -5,6 +5,14 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+
+
+//Middleware: is a set of services that allows multiple processes running
+//on one or more machines to interact. Most often used to support and
+//simplify complex distributed applications. It can also allow data
+//contained in one database to be accessed through another. Middleware
+//is sometimes called plumbing because it connects two applications and
+//passes data between them. (e.g., web servers, application servers). 
 app.use(cors({
   origin: ['https://ecommerce-sureplug23-1xm1.vercel.app',],
   credentials: true
